@@ -9,7 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.alexandrecastilho.cursomc.services.exceptions.DataIntegretyException;
+import com.alexandrecastilho.cursomc.services.exceptions.DataIntegrityException;
 import com.alexandrecastilho.cursomc.services.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
@@ -22,8 +22,8 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
 	}
 
-	@ExceptionHandler(DataIntegretyException.class)
-	public ResponseEntity<StandardError> dataIntegrity(DataIntegretyException e, HttpServletRequest request) {
+	@ExceptionHandler(DataIntegrityException.class)
+	public ResponseEntity<StandardError> dataIntegrity(DataIntegrityException e, HttpServletRequest request) {
 
 		StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
 				System.currentTimeMillis());

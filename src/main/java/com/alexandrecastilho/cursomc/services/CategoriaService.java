@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.alexandrecastilho.cursomc.domain.Categoria;
 import com.alexandrecastilho.cursomc.dto.CategoriaDTO;
 import com.alexandrecastilho.cursomc.repositories.CategoriaRepository;
-import com.alexandrecastilho.cursomc.services.exceptions.DataIntegretyException;
+import com.alexandrecastilho.cursomc.services.exceptions.DataIntegrityException;
 import com.alexandrecastilho.cursomc.services.exceptions.ObjectNotFoundException;
 
 ;
@@ -46,7 +46,7 @@ public class CategoriaService {
 		try {
 			repo.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
-			throw new DataIntegretyException("Não é possivel excluir uma categoria que possui produtos");
+			throw new DataIntegrityException("Não é possivel excluir uma categoria que possui produtos");
 
 		}
 	}
