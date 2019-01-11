@@ -10,8 +10,6 @@ import com.alexandrecastilho.cursomc.domain.Pedido;
 import com.alexandrecastilho.cursomc.repositories.PedidoRepository;
 import com.alexandrecastilho.cursomc.services.exceptions.ObjectNotFoundException;
 
-;
-
 @Service
 public class PedidoService {
 
@@ -21,8 +19,7 @@ public class PedidoService {
 	public Pedido find(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
-				"Objeto não encontrado! ID: " + id + ", Tipo: " + Pedido.class.getName()));
-				
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
 	}
-}
 
+}

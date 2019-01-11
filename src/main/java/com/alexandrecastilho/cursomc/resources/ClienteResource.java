@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.alexandrecastilho.cursomc.domain.Cliente;
 import com.alexandrecastilho.cursomc.dto.ClienteDTO;
 import com.alexandrecastilho.cursomc.services.ClienteService;
 
-
-@RequestMapping(value =" /clientes")
+@RestController
+@RequestMapping(value = "/clientes")
 public class ClienteResource {
 
 	@Autowired
@@ -46,7 +47,7 @@ public class ClienteResource {
 		return ResponseEntity.noContent().build();
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method =RequestMethod.GET)
 	public ResponseEntity<List<ClienteDTO>> findAll() {
 		List<Cliente> list = service.findAll();
 		List<ClienteDTO> listDto = list.stream().map(obj -> new ClienteDTO(obj)).collect(Collectors.toList());
