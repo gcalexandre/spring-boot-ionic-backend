@@ -16,7 +16,7 @@ import com.alexandrecastilho.cursomc.repositories.ClienteRepository;
 import com.alexandrecastilho.cursomc.services.exceptions.DataIntegrityException;
 import com.alexandrecastilho.cursomc.services.exceptions.ObjectNotFoundException;
 
-;
+
 
 @Service
 public class ClienteService {
