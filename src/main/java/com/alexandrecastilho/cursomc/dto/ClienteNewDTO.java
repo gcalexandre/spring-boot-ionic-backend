@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.alexandrecastilho.cursomc.services.validation.ClientInsert.ClienteInsert;
+import com.alexandrecastilho.cursomc.services.validation.ClienteInsert;
 
 
 
